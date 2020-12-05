@@ -1,9 +1,11 @@
 # docker-kubernates
 
-## RUN mongodb image
-dockocker-kubernates/sezione-5-building-multi-container-applications-with-docker/backender image prune -a //Remove all images without containers associate
-docker run --name mongodb --rm -d -p 27017:27017 mongo //run mongodb container
-cd to backend app 
-docker build -t goals-node . //build docker backend image
-docker run --name golas-backend --rm goals-node
+## Start application
+1. Remove all images without containers associate
+  1.1 docker image prune -a
+2. Mongodb container
+  2.1 docker run --name mongodb --rm -d -p 27017:27017 mongo
+3. Build backend image && start container
+  3.1 docker build -t goals-node .
+  3.2 docker run --name golas-backend --rm goals-node
 
