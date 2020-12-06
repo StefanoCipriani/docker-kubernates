@@ -14,15 +14,15 @@
  
 1.  Mongodb container
     1. Create: **docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=secret mongo**
-    1. Access with shell: ** docker exec -it mongodb /bin/bash **
+    1. Access with shell: **docker exec -it mongodb /bin/bash**
   
 1. Backend 
-    1. Build image: ** docker build -t goals-node . **
-    1. Run Container: ** docker run --name goals-backend -v /vagrant/docker-kubernates/sezione-5-building-multi-container-applications-with-docker/backend:/app -v logs:/app/logs -v /app/node_modules --rm -d --network goals-net -p 80:1026 goals-node **
+    1. Build image: **docker build -t goals-node .**
+    1. Run Container: **docker run --name goals-backend -v /vagrant/docker-kubernates/sezione-5-building-multi-container-applications-with-docker/backend:/app -v logs:/app/logs -v /app/node_modules --rm -d --network goals-net -p 80:1026 goals-node**
 
 1. Frontend
-	1. Create image: ** docker build -t goals-react . **
-	1. Run Container: ** docker run --name goals-frontend --rm -p 3000:3000 -it -e IP_ADDRESS=192.168.1.228 goals-react **
+	1. Create image: **docker build -t goals-react . **
+	1. Run Container: **docker run --name goals-frontend --rm -p 3000:3000 -it -e IP_ADDRESS=192.168.1.228 goals-react **
 
 
 ### Notes
