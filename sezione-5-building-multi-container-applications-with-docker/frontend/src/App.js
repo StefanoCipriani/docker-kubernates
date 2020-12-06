@@ -8,7 +8,7 @@ function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  let baseUrl = `http://${process.env.IP_ADDRESS}`;
+  var baseUrl = `http://${process.env.IP_ADDRESS}`;
   
   useEffect(function () {
     async function fetchData() {
