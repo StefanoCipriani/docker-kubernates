@@ -8,7 +8,7 @@ function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  var baseUrl = `http://${process.env.IP_ADDRESS}`;
+  //var baseUrl = `http://${process.env.IP_ADDRESS}`;
   
   useEffect(function () {
     async function fetchData() {
@@ -16,7 +16,7 @@ function App() {
 
       
       try {
-        const response = await fetch(baseUrl+'/goals');
+        const response = await fetch('http://192.168.1.228/goals');
 
         const resData = await response.json();
 
@@ -41,7 +41,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(baseUrl+'/goals', {
+      const response = await fetch('http://192.168.1.228/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -80,7 +80,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(baseUrl+'goals/' + goalId, {
+      const response = await fetch('http://192.168.1.228/goals/' + goalId, {
         method: 'DELETE',
       });
 
