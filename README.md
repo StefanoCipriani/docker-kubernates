@@ -1,4 +1,4 @@
-# docker-kubernates
+# Course docker-kubernates
 
 ## Sezione 5
 
@@ -24,7 +24,7 @@
 	1. docker run --name goals-frontend --rm -p 3000:3000 -it -e IP_ADDRESS=192.168.1.228 goals-react
 
 
-#Notes
+## Notes
 
 1. We must use a port >=1024 fot the backend for unix systems
 1. In the frontend is hardcoded the ip of the machine who is running the application. This beacuse I run the app in a Virtual machine, if i run the app on the same machine where is installed docker, i can set the ip to localhost. In the future i wolud pass the ip as environment variable 
