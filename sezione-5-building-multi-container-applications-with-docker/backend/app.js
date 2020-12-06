@@ -92,10 +92,11 @@ mongoose.connect(
   (err) => {
     if (err) {
       console.error('FAILED TO CONNECT TO MONGODB');
+      console.log(`${process.env.MONGODB_USERNAME}`);	    
       console.error(err);
     } else {
       console.log('CONNECTED TO MONGODB!!');
-      app.listen(80);
+      app.listen(1026);
     }
   }
 );
