@@ -1,4 +1,4 @@
-#Dockerize multi container application
+# Dockerize multi container application
 
 This appication is composed by three layers: db/backend/frontend. Each one will be dockerized and putted in a container. This containers will comunicate each others
 
