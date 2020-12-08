@@ -1,0 +1,27 @@
+#Dockerize multi container application
+
+This appication is composed by three layers: db/backend/frontend. Each one will be dockerized and putted in a container. This containers will comunicate each others
+
+### Create Network
+Create the commom network on which all containers belong
+
+1. docker network create goals-net
+
+### Start application
+
+1. Precondition
+   1. Remove all images without containers associate: **docker image prune -a**
+   1. Remove all unused containers: **docker container prune**
+   1. Delete all unused volumes
+ 
+1.  Mongodb container
+    1. Create: **docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=secret mongo**
+    1. Access with shell: **docker exec -it mongodb /bin/bash**
+  
+1. Backend 
+    1. Build image: **docker build -t goals-node .**
+    1. Run Container: **docker run --name goals-backend -v /vagrant/docker-kubernates/sezione-5-building-multi-container-applications-with-docker/backend:/app -v logs:/app/logs -v /app/node_modules --rm -d --network goals-net -p 80:1026 goals-node**
+
+1. Frontend
+	1. Create image: **docker build -t goals-react .**
+	1. Run Container: **docker run --name goals-frontend --rm -p 3000:3000 -it -e IP_ADDRESS=192.168.1.228 goals-react**
