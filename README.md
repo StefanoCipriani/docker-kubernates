@@ -30,3 +30,7 @@
 1. We must use a port >=1024 for the backend for unix systems. If we use known ports we faced permission error
 1. In the frontend is hardcoded the ip of the machine who is running the application. This beacuse I run the app in a Virtual machine, if i run the app on the same machine where is installed docker, i can set the ip to localhost. In the future i wolud pass the ip as environment variable 
 1. Be sure that volumes have correct pemission access. By default they are accesible only by root user, this could cause errors
+
+## [Sezione6](https://github.com/StefanoCipriani/docker-kubernates/blob/master/sezione-6-docker-compose/sezione-6-readme-docker-compose.md#docker-compose-example)
+
+Build same application of section 5 using docker compose
