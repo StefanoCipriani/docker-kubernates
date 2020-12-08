@@ -10,4 +10,4 @@ All three layers will be dockerized and started
   1. docker-compose up
 
 ## Stop
-  2. docker-compose down
+  1. docker-compose down
